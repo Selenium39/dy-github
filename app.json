@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/notifications/notifications",
+    "pages/explore/explore",
+    "pages/profile/profile"
+  ],
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "van-tabbar": "@vant/weapp/tabbar/index",
+    "van-tabbar-item": "@vant/weapp/tabbar-item/index"
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Github",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "custom": true,
+    "list": [{
+        "pagePath": "pages/home/home"
+      },
+      {
+        "pagePath": "pages/notifications/notifications"
+      },
+      {
+        "pagePath": "pages/explore/explore"
+      },
+      {
+        "pagePath": "pages/profile/profile"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}
