@@ -1,4 +1,6 @@
 // app.js
 App({
-  globalData: {},
+  globalData: {
+    token:null
+  }
 })

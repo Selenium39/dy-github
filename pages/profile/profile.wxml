@@ -1,3 +1,6 @@
 <view class="container">
-  <view>Profile</view>
+  <view wx:if="{{!token}}">
+    <van-empty class="custom-image" image="/images/stormtroopocat.png" description="需要登录才能查看" />
+    <van-button block round type="info">前往登录</van-button>
+  </view>
 </view>

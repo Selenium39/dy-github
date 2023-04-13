@@ -5,22 +5,22 @@ Page({
     list:[
       {
         icon:'wap-home-o',
-        text:'Home',
+        text:'主页',
         url:'/pages/home/home'
       },
       {
         icon:'envelop-o',
-        text:'Notifications',
+        text:'通知',
         url:'/pages/notifications/notifications'
       },
       {
         icon:'browsing-history-o',
-        text:'Explore',
+        text:'探索',
         url:'/pages/explore/explore'
       },
       {
         icon:'user-o',
-        text:'Profile',
+        text:'个人资料',
         url:'/pages/profile/profile'
       }
     ]
