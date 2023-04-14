@@ -3,13 +3,16 @@
     "pages/home/home",
     "pages/notifications/notifications",
     "pages/explore/explore",
-    "pages/profile/profile"
+    "pages/profile/profile",
+    "pages/login/login"
   ],
   "usingComponents": {
     "van-button": "@vant/weapp/button/index",
     "van-tabbar": "@vant/weapp/tabbar/index",
     "van-tabbar-item": "@vant/weapp/tabbar-item/index",
-    "van-empty": "@vant/weapp/empty/index"
+    "van-empty": "@vant/weapp/empty/index",
+    "van-image": "@vant/weapp/image/index",
+    "van-field": "@vant/weapp/field/index"
   },
   "window": {
     "backgroundTextStyle": "light",

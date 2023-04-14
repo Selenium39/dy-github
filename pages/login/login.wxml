@@ -1,0 +1,12 @@
+<view class="container">
+  <view class="login">
+    <van-image class="logo" round width="120rpx" height="120rpx" fit="cover" src="/images/dojocat.jpg" />
+    <view class="tip">登录 GitHub</view>
+    <view class="login-card">
+      <van-cell-group>
+        <van-field value="{{ token }}" placeholder="请输入用户名" bind:change="onChange" />
+      </van-cell-group>
+      <rich-text class="token-tip" nodes="<p>我们的系统会将您的Token保存在本地，不会上传到网络或第三方服务器，保证您的信息安全。<br><a href='https://github.com/settings/tokens' style='color:#007aff;'>https://github.com/settings/tokens</a></p>"></rich-text>
+    </view>
+  </view>
+</view>

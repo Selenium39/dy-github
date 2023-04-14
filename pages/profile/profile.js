@@ -1,8 +1,13 @@
 const app = getApp()
 
 Page({
-  data(){
-     token : null
+  data:{
+     token : null,
+  },
+  gotoLogin(){
+    wx.navigateTo({
+      url: '/pages/login/login',
+    })
   },
   onShow: function () {
     this.getTabBar().init();
