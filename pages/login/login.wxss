@@ -8,8 +8,6 @@
   margin-bottom: 20rpx;
 }
 
-
-
 .login-card{
     width: 80vw;
     padding: 10rpx;
@@ -20,4 +18,10 @@
 .token-tip{
   font-size: 28rpx;
   line-height: 1.5;
+}
+
+.login-btn{
+    display: flex;
+    justify-content: center;
+    padding-top: 20rpx;
 }

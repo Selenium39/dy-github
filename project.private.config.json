@@ -1,7 +1,8 @@
 {
   "projectname": "dy-github",
   "setting": {
-    "compileHotReLoad": true
+    "compileHotReLoad": true,
+    "urlCheck": false
   },
   "libVersion": "2.31.0"
 }

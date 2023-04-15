@@ -4,9 +4,13 @@
     <view class="tip">登录 GitHub</view>
     <view class="login-card">
       <van-cell-group>
-        <van-field value="{{ token }}" placeholder="请输入用户名" bind:change="onChange" />
+        <van-field model:value="{{ token }}" placeholder="请输入您的Github的Token" />
       </van-cell-group>
-      <rich-text class="token-tip" nodes="<p>我们的系统会将您的Token保存在本地，不会上传到网络或第三方服务器，保证您的信息安全。<br><a href='https://github.com/settings/tokens' style='color:#007aff;'>https://github.com/settings/tokens</a></p>"></rich-text>
+      <view class="login-btn">
+        <van-button bind:click="login" round type="info">登录</van-button>
+      </view>
+      <rich-text bindlongpress="copy" class="token-tip" data-text="https://github.com/settings/tokens/new?scopes=repo%2Cworkflow%2Cnotifications%2Cuser%2Cgist%2Cproject&description=githubWxToken" nodes="<p style='padding:20px'>我们的系统会将您的Token保存在本地，不会上传到网络或第三方服务器，保证您的信息安全。<br><a href='https://github.com/settings/tokens' style='color:#007aff;'>https://github.com/settings/tokens(长按复制后用浏览器打开)<br>Expiration选择No expiration</a></p>"></rich-text>
     </view>
   </view>
+  <van-toast id="van-toast" />
 </view>

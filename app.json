@@ -12,7 +12,10 @@
     "van-tabbar-item": "@vant/weapp/tabbar-item/index",
     "van-empty": "@vant/weapp/empty/index",
     "van-image": "@vant/weapp/image/index",
-    "van-field": "@vant/weapp/field/index"
+    "van-field": "@vant/weapp/field/index",
+    "van-toast": "@vant/weapp/toast/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-divider": "@vant/weapp/divider/index"
   },
   "window": {
     "backgroundTextStyle": "light",

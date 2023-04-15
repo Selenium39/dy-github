@@ -1,0 +1,40 @@
+.profile{
+  padding: 40rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.basic-info{
+  display: flex;
+}
+
+.names{
+  padding: 20rpx;
+}
+.name{
+  font-weight: bold;
+}
+.login-name{
+  font-size: 28rpx;
+  color:#656d76;
+}
+.color-gray{
+  color: #656d76;
+}
+.bio{
+  padding-top: 10rpx;
+  padding-bottom: 20rpx;
+}
+.info-row{
+  display: flex;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+}
+.info-icon{
+  margin-right: 10rpx;
+}
+
+.dot{
+  font-weight: bold;
+  font-size: large;
+}

@@ -1,9 +1,37 @@
-<view class="container">
-    <view wx:if="{{!token}}">
-      <van-empty class="custom-image" image="/images/stormtroopocat.png" description="需要登录才能查看" />
-      <van-button bind:click="gotoLogin" block round type="info">前往登录</van-button>
+<view>
+  <view class="container" wx:if="{{!token}}">
+    <van-empty class="custom-image" image="/images/stormtroopocat.png" description="需要登录才能查看" />
+    <van-button bind:click="gotoLogin" block round type="info">前往登录</van-button>
+  </view>
+  <view class="profile" wx:else>
+    <view class="basic-info">
+      <view>
+        <van-image round width="120rpx" height="120rpx" fit="cover" src="{{userInfo.avatar_url}}" />
+      </view>
+      <view class="names">
+        <view class="name">{{userInfo.name}}</view>
+        <view class="login-name">{{userInfo.login}}</view>
+      </view>
     </view>
-    <view wx:else>
-       已登录
+    <view class="bio">
+      {{userInfo.bio}}
     </view>
+    <view class="info-row">
+      <van-icon class="info-icon" name="location-o" />
+      <view>{{userInfo.location}}</view>
+    </view>
+    <view class="info-row">
+      <van-icon class="info-icon" name="edit" />
+      <view>{{userInfo.blog}}</view>
+    </view>
+    <view class="info-row">
+      <van-icon class="info-icon" name="envelop-o" />
+      <view>{{userInfo.email}}</view>
+    </view>
+    <view class="info-row">
+      <van-icon class="info-icon" name="friends-o" />
+      <view>{{userInfo.followers}} <text class="color-gray">关注者</text>
+      <text class="dot"> . </text> {{userInfo.following}} <text class="color-gray">关注</text></view>
+    </view>
+  </view>
 </view>

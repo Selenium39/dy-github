@@ -24,7 +24,7 @@
       "disablePlugins": [],
       "outputPath": ""
     },
-    "condition": false,
+    "condition": true,
     "packNpmManually": true
   },
   "condition": {},
