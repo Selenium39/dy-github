@@ -1,3 +1,5 @@
+const repoService = require(('../../services/repo'))
+
 const app = getApp()
 
 Page({
@@ -10,13 +12,18 @@ Page({
       url: '/pages/login/login',
     })
   },
-  onShow: function () {
+  onShow: async function () {
+    const {token} = app.globalData
     this.getTabBar().init();
-    if (app.globalData.token) {
+    if (token) {
       this.setData({
-        token: app.globalData.token,
+        token,
         userInfo:app.globalData.userInfo
       })
+      // 获取README
+      const {login:owner} = app.globalData.userInfo
+      const res = await repoService.getRepoReadme({owner,repo:owner,token})
+      console.log(res)
     }
   },
   onLoad: function () {
