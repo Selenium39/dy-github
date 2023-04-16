@@ -15,7 +15,9 @@
     "van-field": "@vant/weapp/field/index",
     "van-toast": "@vant/weapp/toast/index",
     "van-icon": "@vant/weapp/icon/index",
-    "van-divider": "@vant/weapp/divider/index"
+    "van-divider": "@vant/weapp/divider/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index"
   },
   "window": {
     "backgroundTextStyle": "light",

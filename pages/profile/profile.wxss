@@ -6,8 +6,8 @@
 
 .basic-info{
   display: flex;
+  padding: 20rpx 32rpx;
 }
-
 .names{
   padding: 20rpx;
 }
@@ -21,20 +21,16 @@
 .color-gray{
   color: #656d76;
 }
-.bio{
-  padding-top: 10rpx;
-  padding-bottom: 20rpx;
-}
-.info-row{
-  display: flex;
-  padding-top: 10rpx;
-  padding-bottom: 10rpx;
-}
-.info-icon{
-  margin-right: 10rpx;
-}
 
 .dot{
   font-weight: bold;
   font-size: large;
+}
+
+.user-info .van-cell{
+  padding: 0rpx 32rpx;
+}
+
+.feature-info{
+  margin-top:20rpx;
 }

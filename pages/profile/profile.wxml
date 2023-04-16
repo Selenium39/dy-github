@@ -3,7 +3,7 @@
     <van-empty class="custom-image" image="/images/stormtroopocat.png" description="需要登录才能查看" />
     <van-button bind:click="gotoLogin" block round type="info">前往登录</van-button>
   </view>
-  <view class="profile" wx:else>
+  <view wx:else>
     <view class="basic-info">
       <view>
         <van-image round width="120rpx" height="120rpx" fit="cover" src="{{userInfo.avatar_url}}" />
@@ -13,25 +13,25 @@
         <view class="login-name">{{userInfo.login}}</view>
       </view>
     </view>
-    <view class="bio">
-      {{userInfo.bio}}
-    </view>
-    <view class="info-row">
-      <van-icon class="info-icon" name="location-o" />
-      <view>{{userInfo.location}}</view>
-    </view>
-    <view class="info-row">
-      <van-icon class="info-icon" name="edit" />
-      <view>{{userInfo.blog}}</view>
-    </view>
-    <view class="info-row">
-      <van-icon class="info-icon" name="envelop-o" />
-      <view>{{userInfo.email}}</view>
-    </view>
-    <view class="info-row">
-      <van-icon class="info-icon" name="friends-o" />
-      <view>{{userInfo.followers}} <text class="color-gray">关注者</text>
-      <text class="dot"> . </text> {{userInfo.following}} <text class="color-gray">关注</text></view>
-    </view>
+    <van-cell border="{{false}}" title="{{userInfo.bio}}" />
+    <van-cell-group border="{{false}}"  class="user-info">
+      <van-cell border="{{false}}" title-style="color:#656d76" title="{{userInfo.location}}" icon="location-o" />
+      <van-cell border="{{false}}" title="{{userInfo.blog}}" icon="edit" />
+      <van-cell border="{{false}}" title="{{userInfo.email}}" icon="envelop-o" />
+      <van-cell border="{{false}}"icon="friends-o">
+        <view slot="title">
+        <text>{{userInfo.followers}}</text>
+        <text class="color-gray"> 关注者 </text>
+        <text class="dot"> . </text>
+        <text>{{userInfo.following}}</text>
+        <text class="color-gray"> 关注 </text>
+      </view>
+      </van-cell>
+    </van-cell-group>
+    <van-cell-group custom-class="feature-info">
+      <van-cell title="仓库" icon="newspaper-o" is-link value="" />
+      <van-cell title="已加星标" icon="star-o" is-link value="" />
+      <van-cell title="组织" icon="cluster-o" is-link value="" />
+    </van-cell-group>
   </view>
 </view>
