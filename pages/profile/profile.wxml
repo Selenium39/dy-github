@@ -34,4 +34,7 @@
       <van-cell title="组织" icon="cluster-o" is-link value="" />
     </van-cell-group>
   </view>
+  <view class="readme">
+  <towxml nodes="{{readme}}"/>
+</view>
 </view>

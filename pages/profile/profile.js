@@ -1,21 +1,30 @@
+const repoService = require('../../services/repo')
 const app = getApp()
 
 Page({
   data: {
     token: null,
-    userInfo:{}
+    userInfo:{},
+    readme:{}
   },
   gotoLogin() {
     wx.navigateTo({
       url: '/pages/login/login',
     })
   },
-  onShow: function () {
+  onShow: async function () {
     this.getTabBar().init();
     if (app.globalData.token) {
+      const {login:owner} = app.globalData.userInfo
+      const token = app.globalData.token
       this.setData({
-        token: app.globalData.token,
+        token,
         userInfo:app.globalData.userInfo
+      })
+      const readmeHtml = await repoService.getReadme({token,owner,repo:owner})
+      let result = app.towxml(readmeHtml,'html')
+      this.setData({
+        readme:result
       })
     }
   },
