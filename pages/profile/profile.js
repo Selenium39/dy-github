@@ -15,7 +15,7 @@ Page({
   onShow: async function () {
     this.getTabBar().init();
     if (app.globalData.token) {
-      const {login:owner} = app.globalData.userInfo
+      let {login:owner} = app.globalData.userInfo
       const token = app.globalData.token
       this.setData({
         token,

@@ -14,18 +14,18 @@
       </view>
     </view>
     <van-cell border="{{false}}" title="{{userInfo.bio}}" />
-    <van-cell-group border="{{false}}"  class="user-info">
+    <van-cell-group border="{{false}}" class="user-info">
       <van-cell border="{{false}}" title-style="color:#656d76" title="{{userInfo.location}}" icon="location-o" />
       <van-cell border="{{false}}" title="{{userInfo.blog}}" icon="edit" />
       <van-cell border="{{false}}" title="{{userInfo.email}}" icon="envelop-o" />
-      <van-cell border="{{false}}"icon="friends-o">
+      <van-cell border="{{false}}" icon="friends-o">
         <view slot="title">
-        <text>{{userInfo.followers}}</text>
-        <text class="color-gray"> 关注者 </text>
-        <text class="dot"> . </text>
-        <text>{{userInfo.following}}</text>
-        <text class="color-gray"> 关注 </text>
-      </view>
+          <text>{{userInfo.followers}}</text>
+          <text class="color-gray"> 关注者 </text>
+          <text class="dot"> . </text>
+          <text>{{userInfo.following}}</text>
+          <text class="color-gray"> 关注 </text>
+        </view>
       </van-cell>
     </van-cell-group>
     <van-cell-group custom-class="feature-info">
@@ -35,6 +35,7 @@
     </van-cell-group>
   </view>
   <view class="readme">
-  <towxml nodes="{{readme}}"/>
-</view>
+    <van-cell border="{{false}}" title="README.md" icon="warning-o" />
+    <towxml nodes="{{readme}}" />
+  </view>
 </view>
