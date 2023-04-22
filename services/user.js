@@ -5,7 +5,7 @@ class UserService{
       const res = await request({
         path:'/user',
         header:{
-          'Authorization': 'Bearer ' + token
+          'Authorization': `Bearer ${token}`
         }
       })
       return res
