@@ -1,6 +1,7 @@
 const BASE_URL = 'https://api.github.com';
 
 function request({
+  url = BASE_URL,
   path,
   method = 'GET',
   data = {},
@@ -8,7 +9,7 @@ function request({
 }) {
   return new Promise(function (resolve, reject) {
     wx.request({
-      url: BASE_URL + path,
+      url: url + path,
       data,
       method,
       header,

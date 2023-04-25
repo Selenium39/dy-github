@@ -4,7 +4,8 @@
     "pages/notifications/notifications",
     "pages/explore/explore",
     "pages/profile/profile",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/trending/trending"
   ],
   "usingComponents": {
     "van-button": "@vant/weapp/button/index",
@@ -17,7 +18,10 @@
     "van-icon": "@vant/weapp/icon/index",
     "van-divider": "@vant/weapp/divider/index",
     "van-cell": "@vant/weapp/cell/index",
-    "van-cell-group": "@vant/weapp/cell-group/index"
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-picker": "@vant/weapp/picker/index",
+    "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",
+    "van-dropdown-item": "@vant/weapp/dropdown-item/index"
   },
   "window": {
     "backgroundTextStyle": "light",

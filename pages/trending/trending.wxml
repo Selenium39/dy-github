@@ -1,0 +1,12 @@
+<view>
+  <van-dropdown-menu>
+  <van-dropdown-item value="{{ since }}" options="{{ sinces }}" />
+  <van-dropdown-item title="{{language||'语言'}}" value="{{ language }}" options="{{ languages }}" />
+  <van-dropdown-item title="{{spoken_language||'交流语言'}}" value="{{ spoken_language}}" options="{{ spoken_languages }}" />
+</van-dropdown-menu>
+<view class="repos">
+  <view wx:for="{{repos}}">
+    <view>{{item.name}}</view>
+  </view>
+</view>
+</view>

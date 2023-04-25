@@ -1,0 +1,12 @@
+.explore{
+  padding: 40rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.find{
+  margin-top: 40rpx;
+}
+.find > view{
+  margin-bottom: 20rpx;
+}
