@@ -5,7 +5,7 @@ Page({
   data: {
     token: null,
     userInfo:{},
-    readme:{}
+    readme:null
   },
   gotoLogin() {
     wx.navigateTo({

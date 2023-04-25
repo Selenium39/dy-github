@@ -35,7 +35,7 @@
     </van-cell-group>
   </view>
   <view class="readme">
-    <van-cell border="{{false}}" title="README.md" icon="warning-o" />
+    <van-cell wx:if="{{readme}}" border="{{false}}" title="README.md" icon="warning-o" />
     <towxml nodes="{{readme}}" />
   </view>
 </view>
