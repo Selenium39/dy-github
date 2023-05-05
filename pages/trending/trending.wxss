@@ -1,0 +1,13 @@
+.card{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20rpx;
+  margin-bottom:20rpx;
+  border: solid 4rpx;
+  padding:20rpx
+}
+
+.card .header{
+  display: flex;
+}

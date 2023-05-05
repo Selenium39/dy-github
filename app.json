@@ -21,7 +21,9 @@
     "van-cell-group": "@vant/weapp/cell-group/index",
     "van-picker": "@vant/weapp/picker/index",
     "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",
-    "van-dropdown-item": "@vant/weapp/dropdown-item/index"
+    "van-dropdown-item": "@vant/weapp/dropdown-item/index",
+    "van-row": "@vant/weapp/row/index",
+    "van-col": "@vant/weapp/col/index"
   },
   "window": {
     "backgroundTextStyle": "light",
