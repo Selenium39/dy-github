@@ -29,6 +29,21 @@ Page({
        repos
      })
   },
+  changeSince(value){
+    const {detail:since} = value
+    this.setData({since})
+    this.getRepos()  
+  },
+  changeLanguage(value){
+    const {detail:language} = value
+    this.setData({language})
+    this.getRepos() 
+  },
+  changeSpokenLanguage(value){
+    const {detail:spoken_language} = value
+    this.setData({spoken_language})
+    this.getRepos() 
+  },
   async onLoad() {
     const [languages, spoken_languages] = await Promise.all([trendingService.getLanguages(), trendingService.getSpokenLanguage(),this.getRepos()])
     this.setData({
