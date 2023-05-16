@@ -1,5 +1,8 @@
 @import '/miniprogram_npm/@vant/weapp/common/index.wxss';
-
+page{
+  height: 100%;
+  background-color: #eef1f3;
+}
 .container {
   height: 100%;
   display: flex;

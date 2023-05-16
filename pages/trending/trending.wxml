@@ -6,28 +6,7 @@
   </van-dropdown-menu>
   <view class="repos">
     <view wx:for="{{repos}}" wx:key="index">
-      <view class="card">
-        <view class="header">
-          <van-image width="100rpx" height="100rpx" src="{{item.avatar}}" />
-          <view>
-            <view style="height: 50rpx;">{{item.author}}</view>
-            <view style="height: 50rpx;">{{item.name}}</view>
-          </view>
-        </view>
-        <view class="content">
-           {{item.description}}
-        </view>
-        <view>
-          <van-icon name="star-o" /> {{item.stars}}
-          <van-icon color="{{item.languageColor}}" name="circle" /> {{item.language}}
-        </view>
-        <view>
-          <van-icon name="contact" />{{item.builtBy.length}}贡献者<van-icon name="arrow" />
-        </view>
-        <view>
-          <van-button icon="star-o">星标</van-button>
-        </view>
-      </view>
+      <repo-card repo="{{item}}"></repo-card>
     </view>
   </view>
 </view>

@@ -1,0 +1,23 @@
+<view class="repo-card row" bindtap="showRepo">
+  <view class="header row">
+    <van-image lazy-load width="75rpx" height="75rpx" src="{{repo.avatar}}"></van-image>
+    <view class="info">
+      <view class="author">{{repo.author}}</view>
+      <view class="name">{{repo.name}}</view>
+    </view>
+  </view>
+  <view class="row">
+    {{repo.description}}
+  </view>
+  <view class="row">
+    <van-icon name="star-o" /> {{repo.stars}}
+    <van-icon color="{{repo.languageColor}}" name="circle" /> {{repo.language}}
+  </view>
+  <view class="row">
+    <van-icon name="contact" /> {{repo.builtBy.length}} 贡献者
+    <van-icon name="arrow" />
+  </view>
+  <view class="row">
+    <van-button custom-style="width:calc(100% - 40rpx);" icon="star-o">星标</van-button>
+  </view>
+</view>
