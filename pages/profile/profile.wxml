@@ -34,8 +34,5 @@
       <van-cell title="组织" icon="cluster-o" is-link value="" />
     </van-cell-group>
   </view>
-  <view class="readme">
-    <van-cell wx:if="{{readme}}" border="{{false}}" title="README.md" icon="warning-o" />
-    <towxml nodes="{{readme}}" />
-  </view>
+  <readme owner="{{userInfo.login}}" repo="{{userInfo.login}}"></readme>
 </view>

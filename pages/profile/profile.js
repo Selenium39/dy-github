@@ -15,16 +15,10 @@ Page({
   onShow: async function () {
     this.getTabBar().init();
     if (app.globalData.token) {
-      let {login:owner} = app.globalData.userInfo
       const token = app.globalData.token
       this.setData({
         token,
         userInfo:app.globalData.userInfo
-      })
-      const readmeHtml = await repoService.getReadme({token,owner,repo:owner})
-      let result = app.towxml(readmeHtml,'html')
-      this.setData({
-        readme:result
       })
     }
   },

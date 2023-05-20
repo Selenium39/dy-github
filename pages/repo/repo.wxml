@@ -14,4 +14,5 @@
     <van-cell title="拉取请求" icon="down" is-link value="" />
     <van-cell title="讨论" icon="comment-circle-o" is-link value="" />
   </van-cell-group>
+  <readme owner="{{repo.author}}" repo="{{repo.name}}"></readme>
 </view>

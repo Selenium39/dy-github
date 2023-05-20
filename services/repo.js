@@ -1,11 +1,10 @@
 const {request} = require('../utils/api')
 
 class RepoService{
-   async getReadme({token,owner,repo}){
+   async getReadme({owner,repo}){
       const res = await request({
         path:`/repos/${owner}/${repo}/readme`,
         header:{
-          'Authorization': 'Bearer ' + token,
           'accept':'application/vnd.github.html'
         }
       })
