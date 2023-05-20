@@ -1,11 +1,12 @@
 const app = getApp()
-const repoService = require('../../services/repo')
 
 Page({
   data: {
-    repo:null
+    repo:null,
+    readme:null
   },
-  async onLoad(){
-      const res = await repoService.getRepo()
+  async onLoad(options){
+    let repo = JSON.parse(decodeURIComponent(options.repo))
+    this.setData({repo})
   }
 })

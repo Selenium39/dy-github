@@ -10,7 +10,7 @@
     {{repo.description}}
   </view>
   <view class="row">
-    <van-icon name="star-o" /> {{repo.stars}}
+    <van-icon name="star-o" /> {{repo.currentPeriodStars}}
     <van-icon color="{{repo.languageColor}}" name="circle" /> {{repo.language}}
   </view>
   <view class="row">

@@ -1,0 +1,9 @@
+.repo{
+  padding: 10rpx 20rpx;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20rpx;
+}

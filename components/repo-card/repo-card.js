@@ -5,7 +5,7 @@ Component({
   methods:{
     showRepo(){
       wx.navigateTo({
-        url: '/pages/repo/repo',
+        url: `/pages/repo/repo?repo=${(encodeURIComponent(JSON.stringify(this.properties.repo)))}`,
       })
     }
   }

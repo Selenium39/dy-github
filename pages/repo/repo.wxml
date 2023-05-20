@@ -1,3 +1,17 @@
-<view>
-  Repo
+<view class="repo">
+  <view class="row">
+    <van-image lazy-load width="75rpx" height="75rpx" src="{{repo.avatar}}"></van-image>
+    <view>{{repo.author}}</view>
+  </view>
+  <view class="row">{{repo.name}}</view>
+  <view class="row">{{repo.description}}</view>
+  <view class="row">
+    <van-icon name="star-o" />{{repo.stars}}星
+    <van-icon name="cluster-o" />{{repo.forks}}复刻
+  </view>
+  <van-cell-group>
+    <van-cell title="议题" icon="question-o" is-link value="" />
+    <van-cell title="拉取请求" icon="down" is-link value="" />
+    <van-cell title="讨论" icon="comment-circle-o" is-link value="" />
+  </van-cell-group>
 </view>
