@@ -1,4 +1,4 @@
 <view class="readme">
-    <van-cell wx:if="{{readme}}" border="{{false}}" title="README.md" icon="warning-o" />
+    <van-cell custom-class="filename" wx:if="{{readme}}" border="{{false}}" title="README.md" icon="warning-o" />
     <towxml nodes="{{readme}}" />
 </view>

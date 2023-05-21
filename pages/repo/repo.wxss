@@ -1,9 +1,42 @@
-.repo{
+.header{
   padding: 10rpx 20rpx;
 }
 
-.row{
+.repo-info{
   display: flex;
-  flex-direction: row;
+  align-items: center;
+}
+
+.author{
+  color:#3f3e44;
+  margin-left: 20rpx;
+}
+
+.repo-name{
+  font-weight: bold;
+  font-size: 50rpx;
+}
+
+.row{
   margin-bottom: 20rpx;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.forks{
+  margin-left:20rpx
+}
+
+.big-row{
+  margin-bottom:60rpx;
+}
+
+.branch{
+  background-color: #eef1f3 !important;
+}
+
+.change-branch{
+  color:#4177df !important
 }

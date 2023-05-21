@@ -29,8 +29,10 @@
 
 .user-info .van-cell{
   padding: 0rpx 32rpx;
+  background-color: #eef1f3 !important;
 }
 
 .feature-info{
   margin-top:20rpx;
+  margin-bottom:60rpx
 }

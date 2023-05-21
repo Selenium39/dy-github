@@ -13,12 +13,12 @@
         <view class="login-name">{{userInfo.login}}</view>
       </view>
     </view>
-    <van-cell border="{{false}}" title="{{userInfo.bio}}" />
-    <van-cell-group border="{{false}}" class="user-info">
-      <van-cell border="{{false}}" title-style="color:#656d76" title="{{userInfo.location}}" icon="location-o" />
-      <van-cell border="{{false}}" title="{{userInfo.blog}}" icon="edit" />
-      <van-cell border="{{false}}" title="{{userInfo.email}}" icon="envelop-o" />
-      <van-cell border="{{false}}" icon="friends-o">
+    <van-cell-group border="{{false}}" custom-class="user-info">
+      <van-cell border="{{false}}" title="{{userInfo.bio}}" size="large" />
+      <van-cell border="{{false}}" title-style="color:#656d76" title="{{userInfo.location}}" icon="location-o" size="large" />
+      <van-cell border="{{false}}" title="{{userInfo.blog}}" icon="edit" size="large" />
+      <van-cell border="{{false}}" title="{{userInfo.email}}" icon="envelop-o" size="large" />
+      <van-cell border="{{false}}" icon="friends-o" size="large">
         <view slot="title">
           <text>{{userInfo.followers}}</text>
           <text class="color-gray"> 关注者 </text>
@@ -28,11 +28,11 @@
         </view>
       </van-cell>
     </van-cell-group>
-    <van-cell-group custom-class="feature-info">
-      <van-cell title="仓库" icon="newspaper-o" is-link value="" />
-      <van-cell title="已加星标" icon="star-o" is-link value="" />
-      <van-cell title="组织" icon="cluster-o" is-link value="" />
+    <van-cell-group custom-class="feature-info" size="large">
+      <van-cell title="仓库" icon="newspaper-o" is-link value="" size="large" />
+      <van-cell title="已加星标" icon="star-o" is-link value="" size="large" />
+      <van-cell title="组织" icon="cluster-o" is-link value="" size="large" />
     </van-cell-group>
+    <readme owner="{{userInfo.login}}" repo="{{userInfo.login}}"></readme>
   </view>
-  <readme owner="{{userInfo.login}}" repo="{{userInfo.login}}"></readme>
 </view>

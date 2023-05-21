@@ -1,18 +1,31 @@
 <view class="repo">
-  <view class="row">
-    <van-image lazy-load width="75rpx" height="75rpx" src="{{repo.avatar}}"></van-image>
-    <view>{{repo.author}}</view>
+  <view class="header">
+    <view class="row repo-info">
+      <van-image lazy-load width="75rpx" height="75rpx" src="{{repo.avatar}}"></van-image>
+      <view class="author">{{repo.author}}</view>
+    </view>
+    <view class="row repo-name">{{repo.name}}</view>
+    <view class="row">{{repo.description}}</view>
+    <view class="row">
+      <van-icon name="star-o" /><text class="bold"> {{repo.stars}} </text> 星
+      <van-icon class="forks" name="cluster-o" /><text class="bold"> {{repo.forks}} </text> 复刻
+    </view>
+    <view class="row">
+      <van-button custom-style="width:calc(100% - 120rpx);" icon="star-o">星标</van-button>
+      <van-button style="margin-left:20rpx" icon="bullhorn-o"></van-button>
+    </view>
   </view>
-  <view class="row">{{repo.name}}</view>
-  <view class="row">{{repo.description}}</view>
-  <view class="row">
-    <van-icon name="star-o" />{{repo.stars}}星
-    <van-icon name="cluster-o" />{{repo.forks}}复刻
-  </view>
-  <van-cell-group>
-    <van-cell title="议题" icon="question-o" is-link value="" />
-    <van-cell title="拉取请求" icon="down" is-link value="" />
-    <van-cell title="讨论" icon="comment-circle-o" is-link value="" />
+  <van-cell-group custom-class="big-row">
+    <van-cell title="议题" icon="question-o" is-link value="" size="large" />
+    <van-cell title="拉取请求" icon="down" is-link value="" size="large" />
+    <van-cell title="讨论" icon="comment-circle-o" is-link value="" size="large" />
   </van-cell-group>
+  <view class="big-row">
+    <van-cell custom-class="branch" value-class="change-branch" icon="cluster-o" title="master" value="更换分支" size="large" />
+    <van-cell-group>
+      <van-cell title="浏览代码" icon="description" is-link value="" size="large" />
+      <van-cell title="提交" icon="passed" is-link value="" size="large" />
+    </van-cell-group>
+  </view>
   <readme owner="{{repo.author}}" repo="{{repo.name}}"></readme>
 </view>
