@@ -27,5 +27,5 @@
       <van-cell title="提交" icon="passed" is-link value="" size="large" />
     </van-cell-group>
   </view>
-  <readme owner="{{repo.author}}" repo="{{repo.name}}"></readme>
+  <readme owner="{{repo.author||repo.owner.login}}" repo="{{repo.name}}"></readme>
 </view>
