@@ -1,4 +1,3 @@
-const repoService = require('../../services/repo')
 const app = getApp()
 
 Page({
@@ -10,6 +9,15 @@ Page({
   gotoLogin() {
     wx.navigateTo({
       url: '/pages/login/login',
+    })
+  },
+  showRepoList(){
+    const data = {
+      token:this.data.token,
+      owner:this.data.userInfo.login
+    }
+    wx.navigateTo({
+      url: `/pages/repo-list/repo-list?data=${encodeURIComponent(JSON.stringify(data))}`,
     })
   },
   onShow: async function () {

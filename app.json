@@ -6,7 +6,8 @@
     "pages/profile/profile",
     "pages/login/login",
     "pages/trending/trending",
-    "pages/repo/repo"
+    "pages/repo/repo",
+    "pages/repo-list/repo-list"
   ],
   "usingComponents": {
     "van-button": "@vant/weapp/button/index",
