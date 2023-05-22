@@ -20,6 +20,14 @@ Page({
       url: `/pages/repo-list/repo-list?data=${encodeURIComponent(JSON.stringify(data))}`,
     })
   },
+  showStarredList(){
+    const data = {
+      token:this.data.token,
+    }
+    wx.navigateTo({
+      url: `/pages/starred/starred?data=${encodeURIComponent(JSON.stringify(data))}`,
+    })
+  },
   onShow: async function () {
     this.getTabBar().init();
     if (app.globalData.token) {
