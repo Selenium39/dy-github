@@ -31,7 +31,7 @@
     <van-cell-group custom-class="feature-info" size="large">
       <van-cell bind:click="showRepoList" title="仓库" icon="newspaper-o" is-link value="" size="large" />
       <van-cell bind:click="showStarredList" title="已加星标" icon="star-o" is-link value="" size="large" />
-      <van-cell title="组织" icon="cluster-o" is-link value="" size="large" />
+      <van-cell bind:click="showOrganList" title="组织" icon="cluster-o" is-link value="" size="large" />
     </van-cell-group>
     <readme owner="{{userInfo.login}}" repo="{{userInfo.login}}"></readme>
   </view>

@@ -8,7 +8,8 @@
     "pages/trending/trending",
     "pages/repo/repo",
     "pages/repo-list/repo-list",
-    "pages/starred/starred"
+    "pages/starred/starred",
+    "pages/organs/organs"
   ],
   "usingComponents": {
     "van-button": "@vant/weapp/button/index",

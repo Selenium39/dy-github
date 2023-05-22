@@ -28,6 +28,14 @@ Page({
       url: `/pages/starred/starred?data=${encodeURIComponent(JSON.stringify(data))}`,
     })
   },
+  showOrganList(){
+    const data = {
+      token:this.data.token,
+    }
+    wx.navigateTo({
+      url: `/pages/organs/organs?data=${encodeURIComponent(JSON.stringify(data))}`,
+    })
+  },
   onShow: async function () {
     this.getTabBar().init();
     if (app.globalData.token) {

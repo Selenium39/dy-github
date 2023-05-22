@@ -31,7 +31,6 @@ Page({
       owner,
       token
     })
-    console.log(repoList)
     this.setData({
       repoList,
       token
