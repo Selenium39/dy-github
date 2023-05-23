@@ -4,7 +4,7 @@
     <view>发现</view>
     <van-cell-group custom-class="feature-info">
       <van-cell title="热门仓库" icon="newspaper-o" is-link value="" url="/pages/trending/trending" size="large" />
-      <van-cell title="精选列表" icon="newspaper-o" is-link value="" size="large" />
+      <van-cell title="精选列表" icon="smile-o" is-link value="" url="/pages/hot/hot" size="large" />
     </van-cell-group>
   </view>
 </view>

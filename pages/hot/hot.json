@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "towxml":"/towxml/towxml",
+    "repo-card":"/components/repo-card/repo-card"
+  }
+}

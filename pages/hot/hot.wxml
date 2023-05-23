@@ -1,0 +1,5 @@
+<view class="repo-list">
+  <van-cell-group>
+    <van-cell data-repo="{{item.name}}" data-owner="{{item.owner.login}}" bindtap="showRepo"  wx:for="{{repoList}}" title="{{item.name}}" label="{{item.owner.login}}" border="{{ false }}" size="large" is-link />
+  </van-cell-group>
+</view>

@@ -7,11 +7,11 @@
     </view>
   </view>
   <view class="row">
-    {{repo.description}}
+    {{repo.description||''}}
   </view>
   <view class="row">
-    <van-icon name="star-o" /> {{repo.currentPeriodStars}}
-    <van-icon color="{{repo.languageColor}}" name="circle" /> {{repo.language}}
+    <van-icon name="star-o" /> {{repo.currentPeriodStars||repo.stargazers_count}}
+    <van-icon wx:if="{{repo.language}}" color="{{repo.languageColor}}" name="circle" /> {{repo.language||''}}
   </view>
   <view class="row">
     <van-icon name="contact" /> {{repo.builtBy.length}} 贡献者
