@@ -1,0 +1,5 @@
+.notifications{
+  padding: 40rpx;
+  display: flex;
+  flex-direction: column;
+}
