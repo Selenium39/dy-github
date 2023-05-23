@@ -1,1 +1,14 @@
 /**index.wxss**/
+.home{
+  padding: 40rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.row{
+  margin-bottom: 20rpx;
+}
+
+.big-row{
+  margin-bottom: 60rpx;
+}

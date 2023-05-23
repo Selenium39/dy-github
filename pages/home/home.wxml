@@ -1,4 +1,24 @@
-<!--index.wxml-->
-<view class="container">
-<view>Home</view>
+<view>
+  <view class="container" wx:if="{{!token}}">
+    <van-empty class="custom-image" image="/images/stormtroopocat.png" description="需要登录才能查看" />
+    <van-button bind:click="gotoLogin" block round type="info">前往登录</van-button>
+  </view>
+  <view wx:else>
+    <view class="home">
+      <view class="title">主页</view>
+      <view class="row">
+        <van-search background="#eef1f3" shape="round" value="{{ searchValue }}" placeholder="搜索Github" />
+      </view>
+      <view class="row">
+        我的工作
+      </view>
+      <view>
+        <van-cell-group>
+          <van-cell bind:click="showRepoList" title="仓库" icon="newspaper-o" is-link value="" size="large" />
+          <van-cell bind:click="showStarredList" title="已加星标" icon="star-o" is-link value="" size="large" />
+          <van-cell bind:click="showOrganList" title="组织" icon="cluster-o" is-link value="" size="large" />
+        </van-cell-group>
+      </view>
+    </view>
+  </view>
 </view>
