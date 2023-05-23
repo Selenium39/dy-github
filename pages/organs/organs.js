@@ -8,15 +8,11 @@ Page({
     token: null
   },
   async onLoad(options) {
-    let {
-      owner,
-      token
-    } = JSON.parse(decodeURIComponent(options.data))
+    const {owner,token} = JSON.parse(decodeURIComponent(options.data))
     const organList = await repoService.getOrganList({
       owner,
       token
     })
-    console.log(organList)
     this.setData({
       organList,
       token

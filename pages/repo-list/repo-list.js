@@ -10,7 +10,6 @@ Page({
   async showRepo(event){
     const {repo,owner} = event.target.dataset
     const repoInfo = await repoService.getRepo({repo,owner,token:this.data.token})
-    console.log(repoInfo.stargazers_count)
     wx.navigateTo({
       url: `/pages/repo/repo?repo=${(encodeURIComponent(JSON.stringify(repoInfo)))}`,
     })

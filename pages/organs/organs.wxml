@@ -1,3 +1,5 @@
-<view>
-  organ
+<view class="organs">
+  <view wx:for="{{organList}}">
+    <van-card desc="{{item.description}}" title="{{item.login}}" thumb="{{ item.avatar_url }}" />
+  </view>
 </view>
