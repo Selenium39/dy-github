@@ -6,7 +6,25 @@ const starService = require('../../services/star')
 Page({
   data: {
     repoList: [],
-    token: null
+    token: null,
+    owner:null,
+    page:1
+  },
+  async lower() {
+    const {
+      owner,
+      token
+    } = this.data
+    const page = this.data.page + 1;
+    const repoList = await starService.getStarredList({
+      owner,
+      token,
+      page
+    })
+    this.setData({
+      page,
+      repoList: this.data.repoList.concat(repoList)
+    })
   },
   async showRepo(event) {
     const {
@@ -33,7 +51,8 @@ Page({
     })
     this.setData({
       repoList,
-      token
+      token,
+      owner
     })
   }
 })

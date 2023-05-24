@@ -1,7 +1,7 @@
-  <view class="repo-list">
-    <scroll-view style="height: 100vh" scroll-y="true" bindscrolltolower="lower">
-      <view wx:for="{{repoList}}" wx:key="index">
+<view class="repo-list">
+  <scroll-view style="height: 100vh" scroll-y="true" bindscrolltolower="lower">
+    <view wx:for="{{repoList}}" wx:key="index">
       <repo-card repo="{{item}}"></repo-card>
     </view>
-</scroll-view>
-  </view>
+  </scroll-view>
+</view>
