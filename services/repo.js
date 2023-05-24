@@ -38,14 +38,15 @@ class RepoService {
   async getRepoList({
     owner,
     token,
-    sort='pushed'
+    sort='pushed',
+    page=1
   }) {
     const params = {
       path: `/users/${owner}/repos`
     }
     if (token) {
       Object.assign(params, {
-        path:`/user/repos?sort=${sort}`,
+        path:`/user/repos?sort=${sort}&page=${page}`,
         header: {
           'Authorization': 'Bearer ' + token,
         }
