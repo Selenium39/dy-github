@@ -1,8 +1,8 @@
 <view class="repo-card row" bindtap="showRepo">
   <view class="header row">
-    <van-image lazy-load width="75rpx" height="75rpx" src="{{repo.avatar}}"></van-image>
+    <van-image lazy-load width="75rpx" height="75rpx" src="{{repo.avatar||repo.owner.avatar_url}}"></van-image>
     <view class="info">
-      <view class="author">{{repo.author}}</view>
+      <view class="author">{{repo.author||repo.owner.login}}</view>
       <view class="name">{{repo.name}}</view>
     </view>
   </view>
@@ -13,7 +13,7 @@
     <van-icon name="star-o" /> {{repo.currentPeriodStars||repo.stargazers_count}}
     <van-icon wx:if="{{repo.language}}" color="{{repo.languageColor}}" name="circle" /> {{repo.language||''}}
   </view>
-  <view class="row">
+  <view class="row" wx-if="{{repo.builtBy}}">
     <van-icon name="contact" /> {{repo.builtBy.length}} 贡献者
     <van-icon name="arrow" />
   </view>

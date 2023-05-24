@@ -21,7 +21,7 @@
     <van-cell title="讨论" icon="comment-circle-o" is-link value="" size="large" />
   </van-cell-group>
   <view class="big-row">
-    <van-cell custom-class="branch" value-class="change-branch" icon="cluster-o" title="master" value="更换分支" size="large" />
+    <van-cell custom-class="branch" value-class="change-branch" icon="cluster-o" title="{{repo.default_branch||'master'}}" value="更换分支" size="large" />
     <van-cell-group>
       <van-cell title="浏览代码" icon="description" is-link value="" size="large" />
       <van-cell title="提交" icon="passed" is-link value="" size="large" />
