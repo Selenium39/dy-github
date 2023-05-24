@@ -5,7 +5,10 @@
       <view class="author">{{repo.author}}</view>
     </view>
     <view class="row repo-name">{{repo.name}}</view>
-    <view class="row">{{repo.description}}</view>
+    <view wx:if="{{repo.private}}" class="row">
+      <van-icon name="closed-eye" /> 私人
+    </view>
+    <view class="row">{{repo.description||''}}</view>
     <view class="row">
       <van-icon name="star-o" /><text class="bold"> {{repo.stars||repo.stargazers_count}} </text> 星
       <van-icon class="forks" name="cluster-o" /><text class="bold"> {{repo.forks}} </text> 复刻
