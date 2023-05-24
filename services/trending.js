@@ -1,6 +1,4 @@
 const {request} = require('../utils/api')
-const languages = require('../datas/languages')
-const spoken_language = require('../datas/spoken-languages')
 const TRENDING_BASE_URL='https://api.gitterapp.com'
 
 
@@ -17,26 +15,6 @@ class TrendingService{
       })
       return res
    }
-
-   async getLanguages(){
-    // const res = await request({
-    //   url:TRENDING_BASE_URL,
-    //   path:'/languages',
-    // })
-    // return res
-    return languages
-   }
-
-   async getSpokenLanguage(){
-    // const res = await request({
-    //   url:TRENDING_BASE_URL,
-    //   path:'/spoken_languages',
-    // })
-    // return res
-    return spoken_language
-   }
-
-
 }
 
 module.exports = new TrendingService()

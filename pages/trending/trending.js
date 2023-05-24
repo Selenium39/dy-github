@@ -1,5 +1,7 @@
 const app = getApp()
 const trendingService = require('../../services/trending')
+const languages = require('../../datas/languages')
+const spoken_languages = require('../../datas/spoken-languages')
 
 Page({
   data: {
@@ -21,40 +23,46 @@ Page({
     language: '',
     spoken_languages: [],
     spoken_language: '',
-    repos:[]
+    repos: []
   },
-  async getRepos(){
-     const repos = await trendingService.getTrendingRepo(this.data)
-     this.setData({
-       repos
-     })
+  async getRepos() {
+    const repos = await trendingService.getTrendingRepo(this.data)
+    this.setData({
+      repos
+    })
   },
-  changeSince(value){
-    const {detail:since} = value
-    this.setData({since})
-    this.getRepos()  
+  changeSince(value) {
+    const {
+      detail: since
+    } = value
+    this.setData({
+      since
+    })
+    this.getRepos()
   },
-  changeLanguage(value){
-    const {detail:language} = value
-    this.setData({language})
-    this.getRepos() 
+  changeLanguage(value) {
+    const {
+      detail: language
+    } = value
+    this.setData({
+      language
+    })
+    this.getRepos()
   },
-  changeSpokenLanguage(value){
-    const {detail:spoken_language} = value
-    this.setData({spoken_language})
-    this.getRepos() 
+  changeSpokenLanguage(value) {
+    const {
+      detail: spoken_language
+    } = value
+    this.setData({
+      spoken_language
+    })
+    this.getRepos()
   },
   async onLoad() {
-    const [languages, spoken_languages] = await Promise.all([trendingService.getLanguages(), trendingService.getSpokenLanguage(),this.getRepos()])
     this.setData({
-      languages: languages.map(lang => ({
-        text: lang.name,
-        value: lang.urlParam
-      })),
-      spoken_languages: spoken_languages.map(lang => ({
-        text: lang.name,
-        value: lang.urlParam
-      })),
+      languages,
+      spoken_languages
     })
+    await this.getRepos()
   }
 })
