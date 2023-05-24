@@ -48,12 +48,12 @@ Page({
     const [languages, spoken_languages] = await Promise.all([trendingService.getLanguages(), trendingService.getSpokenLanguage(),this.getRepos()])
     this.setData({
       languages: languages.map(lang => ({
-        text: lang.title,
-        value: lang.name
+        text: lang.name,
+        value: lang.urlParam
       })),
       spoken_languages: spoken_languages.map(lang => ({
-        text: lang.title,
-        value: lang.name
+        text: lang.name,
+        value: lang.urlParam
       })),
     })
   }

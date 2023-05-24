@@ -1,4 +1,4 @@
-[
+const spoken_languages = [
     {
       "urlParam": "ab",
       "name": "Abkhazian"
@@ -736,3 +736,5 @@
       "name": "Zulu"
     }
   ]
+
+module.exports = spoken_languages

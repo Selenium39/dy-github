@@ -1,4 +1,4 @@
-[
+const languages = [
     {
       "urlParam": "1c-enterprise",
       "name": "1C Enterprise"
@@ -1884,3 +1884,5 @@
       "name": "Zimpl"
     }
   ]
+
+module.exports = languages

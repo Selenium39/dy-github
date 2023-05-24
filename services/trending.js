@@ -1,7 +1,8 @@
 const {request} = require('../utils/api')
-const languages = require('../datas/languages.json')
-const spoken_language = require('../datas/spoken-languages.json')
+const languages = require('../datas/languages')
+const spoken_language = require('../datas/spoken-languages')
 const TRENDING_BASE_URL='https://api.gitterapp.com'
+
 
 class TrendingService{
    async getTrendingRepo({language,since='daily',spoken_language}){
