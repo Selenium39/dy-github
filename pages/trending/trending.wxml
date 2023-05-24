@@ -1,8 +1,8 @@
 <view>
   <van-dropdown-menu>
     <van-dropdown-item bind:change="changeSince" value="{{ since }}" options="{{ sinces }}" />
-    <van-dropdown-item bind:change="changeLanguage" title="{{language||'语言'}}" value="{{ language }}" options="{{ languages }}" />
-    <van-dropdown-item bind:change="changeSpokenLanguage" title="{{spoken_language||'交流语言'}}" value="{{ spoken_language}}" options="{{ spoken_languages }}" />
+    <van-dropdown-item bind:change="changeLanguage" value="{{ language }}" options="{{ languages }}" />
+    <van-dropdown-item bind:change="changeSpokenLanguage"  value="{{ spoken_language}}" options="{{ spoken_languages }}" />
   </van-dropdown-menu>
   <view class="repos">
     <view wx:for="{{repos}}" wx:key="index">

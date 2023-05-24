@@ -1,4 +1,8 @@
 const spoken_languages = [
+  {
+    "urlParam": "",
+    "name": "交流语言"
+  },
     {
       "urlParam": "ab",
       "name": "Abkhazian"
