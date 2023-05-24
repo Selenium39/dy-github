@@ -44,6 +44,7 @@ class RepoService {
     }
     if (token) {
       Object.assign(params, {
+        path:'/user/repos',
         header: {
           'Authorization': 'Bearer ' + token,
         }
