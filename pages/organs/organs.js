@@ -1,6 +1,6 @@
 const app = getApp()
 
-const repoService = require('../../services/repo')
+const organService = require('../../services/organ')
 
 Page({
   data: {
@@ -9,7 +9,7 @@ Page({
   },
   async onLoad(options) {
     const {owner,token} = JSON.parse(decodeURIComponent(options.data))
-    const organList = await repoService.getOrganList({
+    const organList = await organService.getOrganList({
       owner,
       token
     })

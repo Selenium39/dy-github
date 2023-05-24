@@ -1,5 +1,6 @@
 const app = getApp()
 const repoService = require('../../services/repo')
+const searchService = require('../../services/search')
 
 Page({
   data: {
@@ -23,7 +24,7 @@ Page({
       sort:'stars',
       order:'desc'
     }
-     const {items:repoList} = await repoService.search(params)
+     const {items:repoList} = await searchService.search(params)
      this.setData({
       repoList
      })

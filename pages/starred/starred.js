@@ -1,6 +1,7 @@
 const app = getApp()
 
 const repoService = require('../../services/repo')
+const starService = require('../../services/star')
 
 Page({
   data: {
@@ -26,7 +27,7 @@ Page({
       owner,
       token
     } = JSON.parse(decodeURIComponent(options.data))
-    const repoList = await repoService.getStarredList({
+    const repoList = await starService.getStarredList({
       owner,
       token
     })
