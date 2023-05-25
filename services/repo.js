@@ -38,15 +38,15 @@ class RepoService {
   async getRepoList({
     owner,
     token,
-    sort='pushed',
-    page=1
+    sort = 'pushed',
+    page = 1
   }) {
     const params = {
       path: `/users/${owner}/repos`
     }
     if (token) {
       Object.assign(params, {
-        path:`/user/repos?sort=${sort}&page=${page}`,
+        path: `/user/repos?sort=${sort}&page=${page}`,
         header: {
           'Authorization': 'Bearer ' + token,
         }
@@ -54,6 +54,31 @@ class RepoService {
     }
     const res = await request(params)
     return res
+  }
+
+  async getRepoContent({
+    owner,
+    repo,
+    token,
+    path
+  }) {
+    {
+      const params = {
+        path: `/repos/${owner}/${repo}/contents`
+      }
+      if (path) {
+        params.path += path
+      }
+      if (token) {
+        Object.assign(params, {
+          header: {
+            'Authorization': 'Bearer ' + token,
+          }
+        })
+      }
+      const res = await request(params)
+      return res
+    }
   }
 }
 

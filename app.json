@@ -10,7 +10,8 @@
     "pages/repo-list/repo-list",
     "pages/starred/starred",
     "pages/organs/organs",
-    "pages/hot/hot"
+    "pages/hot/hot",
+    "pages/repo-detail/repo-detail"
   ],
   "usingComponents": {
     "van-button": "@vant/weapp/button/index",
