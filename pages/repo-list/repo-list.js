@@ -6,19 +6,15 @@ Page({
   data: {
     repoList: [],
     page: 1,
-    token: null,
-    owner: null
+    owner: null,
+    isMe:null
   },
   async lower() {
-    const {
-      owner,
-      token
-    } = this.data
     const page = this.data.page + 1;
     const repoList = await repoService.getRepoList({
-      owner,
-      token,
-      page
+      owner: this.data.owner,
+      page,
+      isMe
     })
     this.setData({
       page,
@@ -26,32 +22,18 @@ Page({
     })
   },
   async showRepo(event) {
-    const {
-      repo,
-      owner
-    } = event.target.dataset
-    const repoInfo = await repoService.getRepo({
-      repo,
-      owner,
-      token: this.data.token
-    })
+    const { repo, owner } = event.target.dataset
+    const repoInfo = await repoService.getRepo({ repo, owner })
+    const data = {
+      repoInfo
+    }
     wx.navigateTo({
-      url: `/pages/repo/repo?repo=${(encodeURIComponent(JSON.stringify(repoInfo)))}`,
+      url: `/pages/repo/repo?data=${(encodeURIComponent(JSON.stringify(data)))}`,
     })
   },
   async onLoad(options) {
-    let {
-      owner,
-      token
-    } = JSON.parse(decodeURIComponent(options.data))
-    const repoList = await repoService.getRepoList({
-      owner,
-      token
-    })
-    this.setData({
-      repoList,
-      token,
-      owner
-    })
+    let { owner,isMe} = JSON.parse(decodeURIComponent(options.data))
+    const repoList = await repoService.getRepoList({ owner,isMe})
+    this.setData({ repoList, owner,isMe })
   }
 })

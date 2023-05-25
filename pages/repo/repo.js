@@ -2,21 +2,19 @@ const app = getApp()
 
 Page({
   data: {
-    repo:null,
-    token:null,
+    repoInfo:null,
   },
   viewCode(){
     const data = {
-      token:this.data.token,
-      owner:this.data.repo.author||this.data.repo.owner.login,
-      repo:this.data.repo.name
+      owner:this.data.repoInfo.author||this.data.repoInfo.owner.login,
+      repo:this.data.repoInfo.name
     }
     wx.navigateTo({
       url: `/pages/repo-detail/repo-detail?data=${encodeURIComponent(JSON.stringify(data))}`,
     })
   },
   async onLoad(options){
-    let repo = JSON.parse(decodeURIComponent(options.repo))
-    this.setData({repo})
+    let {repoInfo} = JSON.parse(decodeURIComponent(options.data))
+    this.setData({repoInfo})
   }
 })

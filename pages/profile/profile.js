@@ -13,8 +13,8 @@ Page({
   },
   showRepoList(){
     const data = {
-      token:this.data.token,
-      owner:this.data.userInfo.login
+      owner:this.data.userInfo.login,
+      isMe:true
     }
     wx.navigateTo({
       url: `/pages/repo-list/repo-list?data=${encodeURIComponent(JSON.stringify(data))}`,
@@ -38,15 +38,13 @@ Page({
   },
   onShow: async function () {
     this.getTabBar().init();
+  },
+  onLoad: function () {
     if (app.globalData.token) {
-      const token = app.globalData.token
       this.setData({
-        token,
+        token:app.globalData.token,
         userInfo:app.globalData.userInfo
       })
     }
-  },
-  onLoad: function () {
-
   }
 })

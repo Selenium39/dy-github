@@ -19,10 +19,12 @@ Component({
   methods: {
     async getReadme() {
       const readmeHtml = await repoService.getReadme(this.properties)
-      const result = app.towxml(readmeHtml, 'html')
-      this.setData({
-        readme:result
-      })
+      if (!readmeHtml.message) {
+        const result = app.towxml(readmeHtml, 'html')
+        this.setData({
+          readme: result
+        })
+      }
     },
   },
 })

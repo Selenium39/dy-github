@@ -1,7 +1,9 @@
 const { request } = require('../utils/api')
+const app = getApp()
+const token = app.globalData.token
 
 class SearchService {
-    async search({ q, sort, order = desc, token, per_page = 30 }) {
+    async search({ q, sort, order = 'desc', per_page = 30 }) {
         const params = {
             path: `/search/repositories?q=${q}&sort=${sort}&order=${order}&per_page=${per_page}`
         }

@@ -4,8 +4,11 @@ Component({
   },
   methods:{
     showRepo(){
+      const data = {
+        repoInfo:this.properties.repo
+      }
       wx.navigateTo({
-        url: `/pages/repo/repo?repo=${(encodeURIComponent(JSON.stringify(this.properties.repo)))}`,
+        url: `/pages/repo/repo?data=${(encodeURIComponent(JSON.stringify(data)))}`,
       })
     }
   }

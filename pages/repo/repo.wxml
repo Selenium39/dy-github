@@ -1,17 +1,17 @@
 <view class="repo">
   <view class="header">
     <view class="row repo-info">
-      <van-image lazy-load width="75rpx" height="75rpx" src="{{repo.avatar||repo.owner.avatar_url}}"></van-image>
-      <view class="author">{{repo.author||repo.owner.login}}</view>
+      <van-image lazy-load width="75rpx" height="75rpx" src="{{repoInfo.avatar||repoInfo.owner.avatar_url}}"></van-image>
+      <view class="author">{{repoInfo.author||repoInfo.owner.login}}</view>
     </view>
-    <view class="row repo-name">{{repo.name}}</view>
-    <view wx:if="{{repo.private}}" class="row">
+    <view class="row repo-name">{{repoInfo.name}}</view>
+    <view wx:if="{{repoInfo.private}}" class="row">
       <van-icon name="lock" /> 私人
     </view>
-    <view class="row">{{repo.description||''}}</view>
+    <view class="row">{{repoInfo.description||''}}</view>
     <view class="row">
-      <van-icon name="star-o" /><text class="bold"> {{repo.stars||repo.stargazers_count}} </text> 星
-      <van-icon class="forks" name="cluster-o" /><text class="bold"> {{repo.forks}} </text> 复刻
+      <van-icon name="star-o" /><text class="bold"> {{repoInfo.stars||repoInfo.stargazers_count}} </text> 星
+      <van-icon class="forks" name="cluster-o" /><text class="bold"> {{repoInfo.forks}} </text> 复刻
     </view>
     <view class="row">
       <van-button custom-style="width:calc(100% - 120rpx);" icon="star-o">星标</van-button>
@@ -24,11 +24,11 @@
     <van-cell title="讨论" icon="comment-circle-o" is-link value="" size="large" />
   </van-cell-group>
   <view class="big-row">
-    <van-cell custom-class="branch" value-class="change-branch" icon="cluster-o" title="{{repo.default_branch||'master'}}" value="更换分支" size="large" />
+    <van-cell custom-class="branch" value-class="change-branch" icon="cluster-o" title="{{repoInfo.default_branch||'master'}}" value="更换分支" size="large" />
     <van-cell-group>
       <van-cell bindtap="viewCode" title="浏览代码" icon="description" is-link value="" size="large" />
       <van-cell title="提交" icon="passed" is-link value="" size="large" />
     </van-cell-group>
   </view>
-  <readme owner="{{repo.author||repo.owner.login}}" repo="{{repo.name}}"></readme>
+  <readme owner="{{repoInfo.author||repoInfo.owner.login}}" repo="{{repoInfo.name}}"></readme>
 </view>

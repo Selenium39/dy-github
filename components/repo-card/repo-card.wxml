@@ -11,7 +11,7 @@
   </view>
   <view class="row">
     <van-icon name="star-o" /> {{repo.currentPeriodStars||repo.stargazers_count}}
-    <van-icon wx:if="{{repo.language}}" color="{{repo.languageColor}}" name="circle" /> {{repo.language||''}}
+    <van-icon wx:if="{{repo.language}}" color="{{repo.languageColor||'black'}}" name="circle" /> {{repo.language||''}}
   </view>
   <view class="row" wx-if="{{repo.builtBy}}">
     <van-icon name="contact" /> {{repo.builtBy.length}} 贡献者

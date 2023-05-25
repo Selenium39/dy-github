@@ -12,25 +12,18 @@ Page({
     })
   },
   async getNotificationList() {
-    const params = {
-      token: app.globalData.token
-    }
-    const notificationList = await notificationService.getNoticationList(params)
-    console.log(notificationList)
+    const notificationList = await notificationService.getNoticationList()
     this.setData({notificationList})
   },
   onShow: async function () {
     this.getTabBar().init();
-    if (app.globalData.token) {
-      const token = app.globalData.token
-      this.setData({
-        token,
-      })
-    }
   },
   onLoad: async function () {
     if (app.globalData.token) {
-      this.getNotificationList()
+      this.setData({
+        token:app.globalData.token
+      })
+      await this.getNotificationList()
     }
   }
 });
