@@ -1,5 +1,5 @@
 <view>
   <van-cell-group>
-    <van-cell icon="{{item.type==='dir'?'card':'description'}}" wx:for="{{files}}" title="{{item.name}}" size="large" />
+    <van-cell bindtap="showFile" icon="{{item.type==='dir'?'card':'description'}}" wx:for="{{files}}" title="{{item.name}}" size="large" data-path="{{item.path}}" data-type="{{item.type}}" />
   </van-cell-group>
 </view>

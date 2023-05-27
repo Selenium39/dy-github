@@ -63,7 +63,7 @@ class RepoService {
         path: `/repos/${owner}/${repo}/contents`,
       }
       if (path) {
-        params.path += path
+        params.path += `/${path}`
       }
       if (app.globalData.token) {
         Object.assign(params, {

@@ -11,9 +11,11 @@
     "pages/starred/starred",
     "pages/organs/organs",
     "pages/hot/hot",
-    "pages/repo-detail/repo-detail"
+    "pages/repo-detail/repo-detail",
+    "pages/repo-code/repo-code"
   ],
   "usingComponents": {
+    "towxml":"/towxml/towxml",
     "van-button": "@vant/weapp/button/index",
     "van-tabbar": "@vant/weapp/tabbar/index",
     "van-tabbar-item": "@vant/weapp/tabbar-item/index",
