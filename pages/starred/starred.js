@@ -6,19 +6,19 @@ const starService = require('../../services/star')
 Page({
   data: {
     repoList: [],
-    token: null,
-    owner:null,
-    page:1
+    isMe: null,
+    owner: null,
+    page: 1
   },
   async lower() {
     const {
       owner,
-      token
+      isMe
     } = this.data
     const page = this.data.page + 1;
     const repoList = await starService.getStarredList({
       owner,
-      token,
+      isMe,
       page
     })
     this.setData({
@@ -34,7 +34,6 @@ Page({
     const repoInfo = await repoService.getRepo({
       repo,
       owner,
-      token: this.data.token
     })
     wx.navigateTo({
       url: `/pages/repo/repo?repo=${(encodeURIComponent(JSON.stringify(repoInfo)))}`,
@@ -43,15 +42,15 @@ Page({
   async onLoad(options) {
     let {
       owner,
-      token
+      isMe
     } = JSON.parse(decodeURIComponent(options.data))
     const repoList = await starService.getStarredList({
       owner,
-      token
+      isMe
     })
     this.setData({
       repoList,
-      token,
+      isMe,
       owner
     })
   }

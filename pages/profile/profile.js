@@ -22,7 +22,7 @@ Page({
   },
   showStarredList(){
     const data = {
-      token:this.data.token,
+      isMe:true
     }
     wx.navigateTo({
       url: `/pages/starred/starred?data=${encodeURIComponent(JSON.stringify(data))}`,
@@ -30,7 +30,7 @@ Page({
   },
   showOrganList(){
     const data = {
-      token:this.data.token,
+      isMe:true
     }
     wx.navigateTo({
       url: `/pages/organs/organs?data=${encodeURIComponent(JSON.stringify(data))}`,

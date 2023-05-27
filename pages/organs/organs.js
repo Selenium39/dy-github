@@ -5,17 +5,17 @@ const organService = require('../../services/organ')
 Page({
   data: {
     organList: [],
-    token: null
+    isMe:null
   },
   async onLoad(options) {
-    const {owner,token} = JSON.parse(decodeURIComponent(options.data))
+    const {owner,isMe} = JSON.parse(decodeURIComponent(options.data))
     const organList = await organService.getOrganList({
       owner,
-      token
+      isMe
     })
     this.setData({
       organList,
-      token
+      isMe
     })
   }
 })

@@ -23,7 +23,11 @@ class RepoService {
       path: `/repos/${owner}/${repo}`,
     }
     if (token) {
-      Object.assign(params.header, { 'Authorization': 'Bearer ' + token, })
+      Object.assign(params, {
+        header: {
+          'Authorization': 'Bearer ' + token,
+        }
+      })
     }
     const res = await request(params)
     return res
@@ -33,7 +37,6 @@ class RepoService {
   }) {
     const params = {
       path: `/users/${owner}/repos?sort=${sort}&page=${page}`,
-      header:{}
     }
     if (isMe) {
       Object.assign(params, {
@@ -41,7 +44,11 @@ class RepoService {
       })
     }
     if (token) {
-      Object.assign(params.header, { 'Authorization': 'Bearer ' + token, })
+      Object.assign(params, {
+        header: {
+          'Authorization': 'Bearer ' + token,
+        }
+      })
     }
     const res = await request(params)
     return res
@@ -55,13 +62,16 @@ class RepoService {
     {
       const params = {
         path: `/repos/${owner}/${repo}/contents`,
-        header:{}
       }
       if (path) {
         params.path += path
       }
       if (token) {
-        Object.assign(params.header, { 'Authorization': 'Bearer ' + token, })
+        Object.assign(params, {
+          header: {
+            'Authorization': 'Bearer ' + token,
+          }
+        })
       }
       const res = await request(params)
       return res
