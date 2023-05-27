@@ -1,7 +1,6 @@
 const { request } = require('../utils/api')
 
 const app = getApp()
-const token = app.globalData.token
 
 class RepoService {
   async getReadme({ owner, repo }) {
@@ -11,8 +10,8 @@ class RepoService {
         'accept': 'application/vnd.github.html'
       }
     }
-    if (token) {
-      Object.assign(params.header, { 'Authorization': 'Bearer ' + token, })
+    if (app.globalData.token) {
+      Object.assign(params.header, { 'Authorization': 'Bearer ' + app.globalData.token, })
     }
     const res = await request(params)
     return res
@@ -22,10 +21,10 @@ class RepoService {
     const params = {
       path: `/repos/${owner}/${repo}`,
     }
-    if (token) {
+    if (app.globalData.token) {
       Object.assign(params, {
         header: {
-          'Authorization': 'Bearer ' + token,
+          'Authorization': 'Bearer ' + app.globalData.token,
         }
       })
     }
@@ -43,10 +42,10 @@ class RepoService {
         path: `/user/repos?sort=${sort}&page=${page}`,
       })
     }
-    if (token) {
+    if (app.globalData.token) {
       Object.assign(params, {
         header: {
-          'Authorization': 'Bearer ' + token,
+          'Authorization': 'Bearer ' + app.globalData.token,
         }
       })
     }
@@ -66,10 +65,10 @@ class RepoService {
       if (path) {
         params.path += path
       }
-      if (token) {
+      if (app.globalData.token) {
         Object.assign(params, {
           header: {
-            'Authorization': 'Bearer ' + token,
+            'Authorization': 'Bearer ' + app.globalData.token,
           }
         })
       }

@@ -1,6 +1,5 @@
 const { request } = require('../utils/api')
 const app = getApp()
-const token = app.globalData.token
 
 class StarService {
   async getStarredList({ isMe = false, owner, page = 1 }) {
@@ -12,10 +11,10 @@ class StarService {
         path: `/user/starred?page=${page}`,
       })
     }
-    if (token) {
+    if (app.globalData.token) {
       Object.assign(params, {
         header: {
-          'Authorization': 'Bearer ' + token,
+          'Authorization': 'Bearer ' + app.globalData.token,
         }
       })
     }

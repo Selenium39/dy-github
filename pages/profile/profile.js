@@ -38,13 +38,14 @@ Page({
   },
   onShow: async function () {
     this.getTabBar().init();
-  },
-  onLoad: function () {
     if (app.globalData.token) {
       this.setData({
         token:app.globalData.token,
         userInfo:app.globalData.userInfo
       })
     }
+  },
+  onLoad: function () {
+
   }
 })

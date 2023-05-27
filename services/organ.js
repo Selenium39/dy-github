@@ -1,6 +1,5 @@
 const { request } = require('../utils/api')
 const app = getApp()
-const token = app.globalData.token
 
 class OrganService {
     async getOrganList({ owner, isMe = false }) {
@@ -12,10 +11,10 @@ class OrganService {
                 path: '/user/orgs',
             })
         }
-        if (token) {
+        if (app.globalData.token) {
             Object.assign(params, {
                 header: {
-                    'Authorization': 'Bearer ' + token,
+                    'Authorization': 'Bearer ' + app.globalData.token,
                 }
             })
         }

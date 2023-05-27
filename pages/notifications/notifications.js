@@ -17,13 +17,14 @@ Page({
   },
   onShow: async function () {
     this.getTabBar().init();
-  },
-  onLoad: async function () {
     if (app.globalData.token) {
       this.setData({
         token:app.globalData.token
       })
       await this.getNotificationList()
     }
+  },
+  onLoad: async function () {
+
   }
 });
