@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "repo-card":"/components/repo-card/repo-card"
+  }
+}

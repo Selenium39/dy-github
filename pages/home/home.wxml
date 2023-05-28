@@ -7,7 +7,7 @@
     <view class="home">
       <view class="title">主页</view>
       <view class="row">
-        <van-search background="#eef1f3" shape="round" value="{{ searchValue }}" placeholder="搜索Github" />
+        <van-search bind:change="searchChange" bind:search="onSearch" background="#eef1f3" shape="round" value="{{ searchValue }}" placeholder="搜索Github仓库" />
       </view>
       <view class="row">
         我的工作

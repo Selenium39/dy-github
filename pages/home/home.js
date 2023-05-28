@@ -37,6 +37,21 @@ Page({
       url: `/pages/organs/organs?data=${encodeURIComponent(JSON.stringify(data))}`,
     })
   },
+  onSearch(){
+    if(this.data.searchValue){
+      const data = {
+        searchValue:this.data.searchValue
+      }
+      wx.navigateTo({
+        url: `/pages/search/search?data=${encodeURIComponent(JSON.stringify(data))}`,
+      })
+    }
+  },
+  searchChange(event){
+    this.setData({
+      searchValue: event.detail,
+    });
+  },
   onChange(event) {
     // event.detail 的值为当前选中项的索引
     this.setData({ active: event.detail });

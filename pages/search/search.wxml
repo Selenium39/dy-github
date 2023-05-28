@@ -1,0 +1,5 @@
+<view class="repo-list">
+  <view wx:for="{{repoList}}" wx:key="index">
+    <repo-card repo="{{item}}"></repo-card>
+  </view>
+</view>
