@@ -1,5 +1,6 @@
 <view class="explore">
   <view class="title">探索</view>
+  <van-search bind:change="searchChange" bind:search="onSearch" background="#eef1f3" shape="round" value="{{ searchValue }}" placeholder="搜索Github仓库" />
   <view class="find">
     <view>发现</view>
     <van-cell-group custom-class="feature-info">
