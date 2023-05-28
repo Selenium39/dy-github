@@ -1,4 +1,4 @@
-const BASE_URL = 'https://api.github.com';
+const BASE_URL = 'http://43.139.171.171/github';
 
 function request({
   url = BASE_URL,
