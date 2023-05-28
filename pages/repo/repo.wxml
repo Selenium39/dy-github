@@ -19,7 +19,7 @@
     </view>
   </view>
   <van-cell-group custom-class="big-row">
-    <van-cell title="议题" icon="question-o" is-link value="" size="large" />
+    <van-cell bindtap="viewIssue" title="议题" icon="question-o" is-link value="" size="large" />
     <van-cell title="拉取请求" icon="down" is-link value="" size="large" />
     <van-cell title="讨论" icon="comment-circle-o" is-link value="" size="large" />
   </van-cell-group>

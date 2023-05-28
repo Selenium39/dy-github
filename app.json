@@ -12,7 +12,9 @@
     "pages/organs/organs",
     "pages/hot/hot",
     "pages/repo-detail/repo-detail",
-    "pages/repo-code/repo-code"
+    "pages/repo-code/repo-code",
+    "pages/issue/issue",
+    "pages/issue-detail/issue-detail"
   ],
   "usingComponents": {
     "towxml":"/towxml/towxml",
