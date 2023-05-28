@@ -21,7 +21,7 @@
   <van-cell-group custom-class="big-row">
     <van-cell bindtap="viewIssue" title="议题" icon="question-o" is-link value="" size="large" />
     <van-cell bindtap="viewPr" title="拉取请求" icon="down" is-link value="" size="large" />
-    <van-cell title="讨论" icon="comment-circle-o" is-link value="" size="large" />
+    <!-- <van-cell title="讨论" icon="comment-circle-o" is-link value="" size="large" /> -->
   </van-cell-group>
   <view class="big-row">
     <van-cell custom-class="branch" value-class="change-branch" icon="cluster-o" title="{{repoInfo.default_branch||'master'}}" value="更换分支" size="large" />
