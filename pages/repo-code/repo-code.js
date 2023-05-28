@@ -15,8 +15,7 @@ Page({
     })
     const matches = path.match(/\.([^./\\]+)$/)
     const language = matches ? matches[1] : 'shell'
-    console.log(language)
-    const contentStr = '```' + language + base64Util.decode(content) + '```'
+    const contentStr = '```' + language+'\n' + base64Util.decode(content) + '```'
     const fileContent = app.towxml(contentStr, 'markdown')
     this.setData({
       fileContent
