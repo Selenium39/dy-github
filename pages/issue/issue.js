@@ -8,15 +8,16 @@ Page({
     owner: null
   },
   async showIssue(event) {
-    const { number } = event.target.dataset
-    const data = {
-      owner:this.data.owner,
-      repo:this.data.repo,
-      number
-    }
-    wx.navigateTo({
-      url: `/pages/issue-detail/issue-detail?data=${(encodeURIComponent(JSON.stringify(data)))}`,
-    })
+    // todo 后续显示具体的issue
+    // const { number } = event.target.dataset
+    // const data = {
+    //   owner:this.data.owner,
+    //   repo:this.data.repo,
+    //   number
+    // }
+    // wx.navigateTo({
+    //   url: `/pages/issue-detail/issue-detail?data=${(encodeURIComponent(JSON.stringify(data)))}`,
+    // })
   },
   async onLoad(options) {
     const { owner, repo } = JSON.parse(decodeURIComponent(options.data))
