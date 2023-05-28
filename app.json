@@ -14,7 +14,8 @@
     "pages/repo-detail/repo-detail",
     "pages/repo-code/repo-code",
     "pages/issue/issue",
-    "pages/issue-detail/issue-detail"
+    "pages/issue-detail/issue-detail",
+    "pages/pull-request/pull-request"
   ],
   "usingComponents": {
     "towxml":"/towxml/towxml",

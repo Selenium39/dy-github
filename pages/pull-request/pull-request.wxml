@@ -1,0 +1,5 @@
+<viewe>
+  <van-cell-group>
+        <van-cell bindtap="showPr" data-number="{{item.number}}" wx:for="{{prList}}" title="{{item.title}}"  value="#{{item.number}}" label="{{item.created_at}}" size="large" />
+  </van-cell-group>
+</viewe>
