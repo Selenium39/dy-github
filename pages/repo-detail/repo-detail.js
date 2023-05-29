@@ -5,9 +5,13 @@ Page({
     owner: null,
     repo: null,
     files: [],
-    branch:null
+    branch:null,
+    isLoading:true
   },
   async showDetail({ owner, repo, path,branch }) {
+    this.setData({
+      isLoading:true
+    })
     const res = await repoService.getRepoContent({
       owner,
       repo,
@@ -30,7 +34,7 @@ Page({
           return 1;
         }
       });
-    this.setData({ path, files, owner, repo,branch })
+    this.setData({ path, files, owner, repo,branch,isLoading:false })
   },
   async showFile(event) {
     const { path, type } = event.target.dataset

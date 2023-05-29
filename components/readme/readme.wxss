@@ -1,3 +1,9 @@
 .filename{
   background-color: #eef1f3 !important;
 }
+
+.loading-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

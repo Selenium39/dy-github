@@ -7,18 +7,21 @@ Page({
     repoList: [],
     page: 1,
     owner: null,
-    isMe:null
+    isMe:null,
+    isLoading:true
   },
   async lower() {
+    this.setData({isLoading:true})
     const page = this.data.page + 1;
     const repoList = await repoService.getRepoList({
       owner: this.data.owner,
       page,
-      isMe
+      isMe:this.data.isMe
     })
     this.setData({
       page,
-      repoList: this.data.repoList.concat(repoList)
+      repoList: this.data.repoList.concat(repoList),
+      isLoading:false
     })
   },
   async showRepo(event) {
@@ -34,6 +37,6 @@ Page({
   async onLoad(options) {
     let { owner,isMe} = JSON.parse(decodeURIComponent(options.data))
     const repoList = await repoService.getRepoList({ owner,isMe})
-    this.setData({ repoList, owner,isMe })
+    this.setData({ repoList, owner,isMe ,isLoading:false})
   }
 })

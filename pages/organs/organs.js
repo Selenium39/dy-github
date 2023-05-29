@@ -5,7 +5,8 @@ const organService = require('../../services/organ')
 Page({
   data: {
     organList: [],
-    isMe:null
+    isMe:null,
+    isLoading:true
   },
   async onLoad(options) {
     const {owner,isMe} = JSON.parse(decodeURIComponent(options.data))
@@ -15,7 +16,8 @@ Page({
     })
     this.setData({
       organList,
-      isMe
+      isMe,
+      isLoading:false
     })
   }
 })

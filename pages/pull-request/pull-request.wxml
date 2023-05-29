@@ -1,5 +1,9 @@
 <viewe>
   <van-cell-group>
-        <van-cell bindtap="showPr" data-number="{{item.number}}" wx:for="{{prList}}" title="{{item.title}}"  value="#{{item.number}}" label="{{item.created_at}}" size="large" />
+    <van-cell bindtap="showPr" data-number="{{item.number}}" wx:for="{{prList}}" title="{{item.title}}" value="#{{item.number}}" label="{{item.created_at}}" size="large" />
   </van-cell-group>
+  <!--加载中-->
+  <view class="loading-container" wx:if="{{ isLoading }}">
+    <van-loading type="spinner"></van-loading>
+  </view>
 </viewe>

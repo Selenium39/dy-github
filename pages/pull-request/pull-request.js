@@ -5,7 +5,8 @@ Page({
   data: {
     prList: [],
     repo: null,
-    owner: null
+    owner: null,
+    isLoading:true
   },
   async showPr(event) {
     // todo 后续显示具体的pr
@@ -19,7 +20,8 @@ Page({
     this.setData({
       prList: res,
       owner,
-      repo
+      repo,
+      isLoading:false
     })
   }
 })

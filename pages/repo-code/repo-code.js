@@ -5,6 +5,7 @@ const app = getApp()
 Page({
   data: {
     fileContent: null,
+    isLoading:true
   },
   async onLoad(options) {
     const { owner, repo, path,branch } = JSON.parse(decodeURIComponent(options.data))
@@ -19,7 +20,8 @@ Page({
     const contentStr = '```' + language+'\n' + base64Util.decode(content)+ '```'
     const fileContent = app.towxml(contentStr, 'markdown')
     this.setData({
-      fileContent
+      fileContent,
+      isLoading:false
     })
   }
 })

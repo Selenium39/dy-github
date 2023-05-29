@@ -3,5 +3,8 @@
     <view wx:for="{{repoList}}" wx:key="index">
       <repo-card repo="{{item}}"></repo-card>
     </view>
+    <view class="loading-container" wx:if="{{ isLoading }}">
+      <van-loading type="spinner"></van-loading>
+    </view>
   </scroll-view>
 </view>

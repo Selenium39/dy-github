@@ -22,11 +22,15 @@ Page({
     language: '',
     spoken_languages: [],
     spoken_language: '',
-    repos: []
+    repos: [],
+    isLoading:true
   },
   async getRepos() {
+    this.setData({
+      isLoading:true
+    })
     const repos = await trendingService.getTrendingRepo(this.data)
-    this.setData({ repos })
+    this.setData({ repos ,isLoading:false})
   },
   async changeSince(value) {
     const { detail: since } = value

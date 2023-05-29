@@ -1,4 +1,7 @@
 <view class="readme">
     <van-cell custom-class="filename" wx:if="{{readme}}" border="{{false}}" title="README.md" icon="warning-o" />
     <towxml nodes="{{readme}}" />
+    <view class="loading-container" wx:if="{{ isLoading }}">
+      <van-loading type="spinner"></van-loading>
+    </view>
 </view>

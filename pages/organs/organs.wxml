@@ -2,4 +2,7 @@
   <view wx:for="{{organList}}">
     <van-card desc="{{item.description}}" title="{{item.login}}" thumb="{{ item.avatar_url }}" />
   </view>
+  <view class="loading-container" wx:if="{{ isLoading }}">
+        <van-loading type="spinner"></van-loading>
+      </view>
 </view>

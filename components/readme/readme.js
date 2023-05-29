@@ -7,7 +7,8 @@ Component({
     repo: String,
   },
   data: {
-    readme: null
+    readme: null,
+    isLoading:true
   },
   observers: {
     'owner,repo': async function (owner, repo) {
@@ -22,7 +23,8 @@ Component({
       if (!readmeHtml.message) {
         const result = app.towxml(readmeHtml, 'html')
         this.setData({
-          readme: result
+          readme: result,
+          isLoading:false
         })
       }
     },

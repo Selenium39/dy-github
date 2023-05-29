@@ -1,3 +1,7 @@
 <view class="repo-code">
   <towxml nodes="{{fileContent}}" />
+  <!--加载中-->
+  <view class="loading-container" wx:if="{{ isLoading }}">
+    <van-loading type="spinner"></van-loading>
+  </view>
 </view>

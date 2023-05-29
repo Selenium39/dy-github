@@ -26,6 +26,12 @@ page{
   margin-bottom: 60rpx;
 }
 
+.loading-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 page {
   font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica,
     Segoe UI, Arial, Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB', 'Microsoft Yahei',

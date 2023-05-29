@@ -5,7 +5,8 @@ Page({
   data: {
     issueList: [],
     repo: null,
-    owner: null
+    owner: null,
+    isLoading:true
   },
   async showIssue(event) {
     // todo 后续显示具体的issue
@@ -28,7 +29,8 @@ Page({
     this.setData({
       issueList: res,
       owner,
-      repo
+      repo,
+      isLoading:false
     })
   }
 })

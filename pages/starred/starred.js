@@ -8,9 +8,11 @@ Page({
     repoList: [],
     isMe: null,
     owner: null,
-    page: 1
+    page: 1,
+    isLoading:true
   },
   async lower() {
+    this.setData({isLoading:true})
     const {
       owner,
       isMe
@@ -23,7 +25,8 @@ Page({
     })
     this.setData({
       page,
-      repoList: this.data.repoList.concat(repoList)
+      repoList: this.data.repoList.concat(repoList),
+      isLoading:false
     })
   },
   async showRepo(event) {
@@ -51,7 +54,8 @@ Page({
     this.setData({
       repoList,
       isMe,
-      owner
+      owner,
+      isLoading:false
     })
   }
 })

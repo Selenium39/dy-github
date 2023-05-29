@@ -7,8 +7,11 @@
     <view class="notifications">
       <view class="title row">收件箱</view>
       <van-cell-group>
-        <van-cell wx:for="{{notificationList}}" title="{{item.repository.full_name}}"  label="{{item.subject.title}}" size="large" />
+        <van-cell wx:for="{{notificationList}}" title="{{item.repository.full_name}}" label="{{item.subject.title}}" size="large" />
       </van-cell-group>
+      <view class="loading-container" wx:if="{{ isLoading }}">
+        <van-loading type="spinner"></van-loading>
+      </view>
     </view>
   </view>
 </view>

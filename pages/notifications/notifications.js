@@ -4,7 +4,8 @@ const app = getApp()
 Page({
   data: {
     token: null,
-    notificationList: []
+    notificationList: [],
+    isLoading: true
   },
   gotoLogin() {
     wx.navigateTo({
@@ -12,14 +13,15 @@ Page({
     })
   },
   async getNotificationList() {
+    this.setData({ isLoading: true })
     const notificationList = await notificationService.getNoticationList()
-    this.setData({notificationList})
+    this.setData({ notificationList, isLoading: false })
   },
   onShow: async function () {
     this.getTabBar().init();
     if (app.globalData.token) {
       this.setData({
-        token:app.globalData.token
+        token: app.globalData.token
       })
       await this.getNotificationList()
     }
