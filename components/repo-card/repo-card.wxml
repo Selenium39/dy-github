@@ -17,7 +17,7 @@
     <van-icon name="contact" /> {{repo.builtBy.length}} 贡献者
     <van-icon name="arrow" />
   </view>
-  <view class="row">
+  <!-- <view class="row">
     <van-button custom-style="width:calc(100% - 40rpx);" icon="star-o">星标</van-button>
-  </view>
+  </view> -->
 </view>

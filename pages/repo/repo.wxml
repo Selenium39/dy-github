@@ -13,10 +13,10 @@
       <van-icon name="star-o" /><text class="bold"> {{repoInfo.stars||repoInfo.stargazers_count}} </text> 星
       <van-icon class="forks" name="cluster-o" /><text class="bold"> {{repoInfo.forks}} </text> 复刻
     </view>
-    <view class="row">
+    <!-- <view class="row">
       <van-button custom-style="width:calc(100% - 120rpx);" icon="star-o">星标</van-button>
       <van-button style="margin-left:20rpx" icon="bell"></van-button>
-    </view>
+    </view> -->
   </view>
   <van-cell-group custom-class="big-row">
     <van-cell bindtap="viewIssue" title="议题" icon="question-o" is-link value="" size="large" />
