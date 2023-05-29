@@ -11,7 +11,8 @@ Page({
   viewCode() {
     const data = {
       owner: this.data.repoInfo.author || this.data.repoInfo.owner.login,
-      repo: this.data.repoInfo.name
+      repo: this.data.repoInfo.name,
+      branch:this.data.currentBranch
     }
     wx.navigateTo({
       url: `/pages/repo-detail/repo-detail?data=${encodeURIComponent(JSON.stringify(data))}`,

@@ -56,7 +56,8 @@ class RepoService {
   async getRepoContent({
     owner,
     repo,
-    path
+    path,
+    branch
   }) {
     {
       const params = {
@@ -64,6 +65,9 @@ class RepoService {
       }
       if (path) {
         params.path += `/${path}`
+      }
+      if (branch) {
+        params.path += `?ref=${branch}`
       }
       if (app.globalData.token) {
         Object.assign(params, {

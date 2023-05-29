@@ -4,13 +4,15 @@ Page({
   data: {
     owner: null,
     repo: null,
-    files: []
+    files: [],
+    branch:null
   },
-  async showDetail({ owner, repo, path }) {
+  async showDetail({ owner, repo, path,branch }) {
     const res = await repoService.getRepoContent({
       owner,
       repo,
-      path
+      path,
+      branch
     })
     const files = res
       .map((item) => {
@@ -28,14 +30,15 @@ Page({
           return 1;
         }
       });
-    this.setData({ path, files, owner, repo })
+    this.setData({ path, files, owner, repo,branch })
   },
   async showFile(event) {
     const { path, type } = event.target.dataset
     const data = {
       path,
       owner: this.data.owner,
-      repo: this.data.repo
+      repo: this.data.repo,
+      branch:this.data.branch
     }
     if (type === 'file') {
       wx.navigateTo({
@@ -48,7 +51,7 @@ Page({
     }
   },
   async onLoad(options) {
-    const { owner, repo, path } = JSON.parse(decodeURIComponent(options.data))
-    await this.showDetail({ owner, repo, path })
+    const { owner, repo, path,branch } = JSON.parse(decodeURIComponent(options.data))
+    await this.showDetail({ owner, repo, path ,branch})
   }
 })
