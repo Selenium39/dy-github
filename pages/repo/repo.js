@@ -1,47 +1,76 @@
 const app = getApp()
+const branchService = require('../../services/branch')
 
 Page({
   data: {
-    repoInfo:null,
+    repoInfo: null,
+    branches: [],
+    currentBranch: null,
+    showBranches: false
   },
-  viewCode(){
+  viewCode() {
     const data = {
-      owner:this.data.repoInfo.author||this.data.repoInfo.owner.login,
-      repo:this.data.repoInfo.name
+      owner: this.data.repoInfo.author || this.data.repoInfo.owner.login,
+      repo: this.data.repoInfo.name
     }
     wx.navigateTo({
       url: `/pages/repo-detail/repo-detail?data=${encodeURIComponent(JSON.stringify(data))}`,
     })
   },
-  viewIssue(){
+  viewIssue() {
     const data = {
-      owner:this.data.repoInfo.author||this.data.repoInfo.owner.login,
-      repo:this.data.repoInfo.name
+      owner: this.data.repoInfo.author || this.data.repoInfo.owner.login,
+      repo: this.data.repoInfo.name
     }
     wx.navigateTo({
       url: `/pages/issue/issue?data=${encodeURIComponent(JSON.stringify(data))}`,
     })
   },
-  viewPr(){
+  viewPr() {
     const data = {
-      owner:this.data.repoInfo.author||this.data.repoInfo.owner.login,
-      repo:this.data.repoInfo.name
+      owner: this.data.repoInfo.author || this.data.repoInfo.owner.login,
+      repo: this.data.repoInfo.name
     }
     wx.navigateTo({
       url: `/pages/pull-request/pull-request?data=${encodeURIComponent(JSON.stringify(data))}`,
     })
   },
-  viewCommit(){
+  viewCommit() {
     const data = {
-      owner:this.data.repoInfo.author||this.data.repoInfo.owner.login,
-      repo:this.data.repoInfo.name
+      owner: this.data.repoInfo.author || this.data.repoInfo.owner.login,
+      repo: this.data.repoInfo.name
     }
     wx.navigateTo({
       url: `/pages/commit/commit?data=${encodeURIComponent(JSON.stringify(data))}`,
     })
   },
-  async onLoad(options){
-    let {repoInfo} = JSON.parse(decodeURIComponent(options.data))
-    this.setData({repoInfo})
+  changeBranch() {
+      this.setData({
+        showBranches: true
+      })
+  },
+  onCancel(){
+    this.setData({
+      showBranches: false
+    })
+  },
+  onConfirm(event){
+    const { value } = event.detail;
+    this.setData({
+      showBranches:false,
+      currentBranch:value
+    })
+  },
+  async onLoad(options) {
+    let { repoInfo } = JSON.parse(decodeURIComponent(options.data))
+    this.setData({ repoInfo, currentBranch: repoInfo.default_branch || 'master' })
+    const res = await branchService.getBranchList({
+      owner: repoInfo.author || repoInfo.owner.login,
+      repo: repoInfo.name
+    })
+    const branches = res.map(item => item.name)
+    this.setData({
+      branches
+    })
   }
 })
