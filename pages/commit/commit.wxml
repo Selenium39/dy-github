@@ -1,0 +1,5 @@
+<viewe>
+  <van-cell-group>
+        <van-cell bindtap="showCommit" wx:for="{{commitList}}" title="{{item.commit.message}}" label="{{item.author.login}}" size="large" />
+  </van-cell-group>
+</viewe>
