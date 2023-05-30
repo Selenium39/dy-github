@@ -1,5 +1,5 @@
 const {request} = require('../utils/api')
-const TRENDING_BASE_URL='http://43.139.171.171/gitterapp'
+const TRENDING_BASE_URL='https://mihoyonb.com/gitterapp'
 
 
 class TrendingService{
