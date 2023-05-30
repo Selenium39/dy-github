@@ -26,9 +26,8 @@ Page({
   },
   async showRepo(event) {
     const { repo, owner } = event.target.dataset
-    const repoInfo = await repoService.getRepo({ repo, owner })
     const data = {
-      repoInfo
+      repo,owner
     }
     wx.navigateTo({
       url: `/pages/repo/repo?data=${(encodeURIComponent(JSON.stringify(data)))}`,

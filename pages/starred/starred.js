@@ -34,12 +34,12 @@ Page({
       repo,
       owner
     } = event.target.dataset
-    const repoInfo = await repoService.getRepo({
+    const data = {
       repo,
       owner,
-    })
+    }
     wx.navigateTo({
-      url: `/pages/repo/repo?repo=${(encodeURIComponent(JSON.stringify(repoInfo)))}`,
+      url: `/pages/repo/repo?repo=${(encodeURIComponent(JSON.stringify(data)))}`,
     })
   },
   async onLoad(options) {
