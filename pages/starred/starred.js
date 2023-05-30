@@ -39,7 +39,7 @@ Page({
       owner,
     }
     wx.navigateTo({
-      url: `/pages/repo/repo?repo=${(encodeURIComponent(JSON.stringify(data)))}`,
+      url: `/pages/repo/repo?data=${(encodeURIComponent(JSON.stringify(data)))}`,
     })
   },
   async onLoad(options) {
