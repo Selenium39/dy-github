@@ -1,12 +1,12 @@
 {
-  "name": "dy-github",
+  "name": "github-best",
   "version": "1.0.0",
-  "description": "",
+  "description": "这将会是最好的GitHub微信小程序客户端",
   "main": ".eslintrc.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Selenium39",
   "license": "ISC",
   "dependencies": {
     "@vant/weapp": "^1.10.15"
