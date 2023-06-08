@@ -20,4 +20,11 @@ Page({
       searchValue: event.detail,
     });
   },
+  onShareAppMessage: function () {
+    return {
+     title: 'Github Best',
+     desc: '这将会是最好的GitHub微信小程序客户端',
+     path: '/page/explore/explore'
+    }
+   },  
 })
